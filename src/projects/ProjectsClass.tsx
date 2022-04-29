@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import { MOCK_PROJECTS } from './MockProjects'
 
 export interface Props {
@@ -13,10 +13,12 @@ interface State {
 class ProjectsClass extends React.Component<Props, State> {
     state = { currentEnthusiasm: this.props.enthusiasmLevel || 1 };
 
-    onIncrement = () => {
+    onIncrement = (event: SyntheticEvent) => {
+        console.log(event);
         this.updateEnthusiasm(1);
     };
-    onDecrement = () => {
+    onDecrement = (event: SyntheticEvent) => {
+        console.log(event.target);
         this.updateEnthusiasm(-1);
     };
 
