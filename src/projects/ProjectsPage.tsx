@@ -1,6 +1,11 @@
 import React from 'react';
 import { MOCK_PROJECTS } from './MockProjects'
 
+export interface Props {
+    name: string;
+    enthusiasmLevel?: number;
+}
+
 function ProjectsPage({ name, enthusiasmLevel = 1 }: Props) {
     if (enthusiasmLevel <= 0) {
         throw new Error('Insufficient enthusiasm');
@@ -11,11 +16,6 @@ function ProjectsPage({ name, enthusiasmLevel = 1 }: Props) {
             <pre>{JSON.stringify(MOCK_PROJECTS, null, ' ')}</pre>
         </>
     );
-}
-
-export interface Props {
-    name: string;
-    enthusiasmLevel?: number;
 }
 
 function getExclamationMarks(numChars: number) {
