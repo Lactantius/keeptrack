@@ -6,8 +6,8 @@ import ProjectsPage from './projects/ProjectsPage';
 function App() {
   return (
     <div className="container">
-      <ProjectsPage />
-      <ProjectsPage />
+      <ProjectsPage name="Bob" />
+      <ProjectsPage name="Dan" enthusiasmLevel={5} />
     </div>
   );
 }
