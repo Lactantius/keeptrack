@@ -1,5 +1,6 @@
 import React from 'react';
 import { MOCK_PROJECTS } from './MockProjects'
+import ProjectsList from './ProjectsList';
 
 export interface Props {
     name: string;
@@ -13,7 +14,7 @@ function ProjectsPage({ name, enthusiasmLevel = 1 }: Props) {
     return (
         <>
             <h1>{ name }’s Projects{ getExclamationMarks(enthusiasmLevel)}</h1>
-            <pre>{JSON.stringify(MOCK_PROJECTS, null, ' ')}</pre>
+            <ProjectsList projects={MOCK_PROJECTS} />
         </>
     );
 }
