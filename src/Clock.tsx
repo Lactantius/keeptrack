@@ -6,6 +6,13 @@ function Clock() {
         setTime(new Date().toLocaleTimeString());
     }
 
+    React.useEffect(() => {
+        const timerID = setInterval(refresh, 1000);
+        return () => {
+            clearInterval(timerID);
+        };
+    }, []);
+
     return (
         <div>
             <p>{time}</p>
